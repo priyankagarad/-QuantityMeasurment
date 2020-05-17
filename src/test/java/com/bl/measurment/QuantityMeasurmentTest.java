@@ -58,8 +58,16 @@ public class QuantityMeasurmentTest {
     public void givenZeroInchAndZeroInchValue_WhenEqual_ThenShouldReturnTrue()
     {
         double value1=quantityMeasurment.getInchValue(0.0);
-        double value2=quantityMeasurment.getInchValue(0.0));
+        double value2=quantityMeasurment.getInchValue(0.0);
         Assert.assertEquals(value1,value2,0.0);
     }
+
+    @Test
+    public void givenRefrenceObjectForInch_WhenEqual_ThenShouldReturnTrue()
+    {
+        QuantityMeasurment referanceValue=new QuantityMeasurment();
+        Assert.assertEquals(quantityMeasurment,referanceValue);
+    }
+
 
 }
