@@ -115,5 +115,19 @@ public class QuantityMeasurmentTest {
         Assert.assertEquals(value2,value1,0.0);
     }
 
+    @Test
+    public void givenOneFeetAndTwelveFeetValue_WhenNotEqual_ShouldReturnTrue()
+    {
+        double value1=quantityMeasurment.unitConversion(Units.FEET,1.0);
+        double value2=quantityMeasurment.unitConversion(Units.INCH,12.0);
+        Assert.assertEquals(value2,value1,0.0);
+    }
 
+    @Test
+    public void givenTwelveFeetAndOneFeetValue_WhenNotEqual_ShouldReturnTrue()
+    {
+        double value1=quantityMeasurment.unitConversion(Units.FEET,12.0);
+        double value2=quantityMeasurment.unitConversion(Units.INCH,1.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
 }
