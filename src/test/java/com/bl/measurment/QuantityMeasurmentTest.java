@@ -92,10 +92,18 @@ public class QuantityMeasurmentTest {
         Assert.assertNotEquals(result1,result2, 0.0);
     }
     @Test
-    public void givenZeroFeetAndZeroInchValue_WhenEqual_ThenShouldReturnTrue()
+    public void givenZeroFeetAndZeroInchValue_WhenEqual_shouldReturnTrue()
     {
         double value1=quantityMeasurment.unitConversion(Units.FEET,0.0);
         double value2=quantityMeasurment.unitConversion(Units.INCH,0.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
+    @Test
+    public void givenOneFeetAndOneInchValue_WhenNotEqual_ShouldReturnTrue()
+    {
+        double value1=quantityMeasurment.unitConversion(Units.FEET,1.0);
+        double value2=quantityMeasurment.unitConversion(Units.INCH,1.0);
         Assert.assertEquals(value1,value2,0.0);
     }
 
