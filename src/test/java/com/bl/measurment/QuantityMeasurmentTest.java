@@ -48,9 +48,18 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenZeroInchAndZeroInchValue_WhenEqual_ThenShouldReturnTrue()
+    public void givenInchValue_WhenNull_ThenShouldReturnFalse()
     {
         boolean checkNullValue1=quantityMeasurment.equals(null);
         Assert.assertEquals(false,checkNullValue1);
     }
+
+    @Test
+    public void givenZeroInchAndZeroInchValue_WhenEqual_ThenShouldReturnTrue()
+    {
+        double value1=quantityMeasurment.getInchValue(0.0);
+        double value2=quantityMeasurment.getInchValue(0.0));
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
 }
