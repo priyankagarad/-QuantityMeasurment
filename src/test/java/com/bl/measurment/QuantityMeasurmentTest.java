@@ -15,9 +15,9 @@ public class QuantityMeasurmentTest {
     @Test
     public void givenZeroFeetAndZeroFeetValue_WhenEqual_ThenShouldReturnTrue()
     {
-        double value1=quantityMeasurment.unitConversion(Units.FEET,0.0);
-        double value2=quantityMeasurment.unitConversion(Units.FEET,0.0);
-        Assert.assertEquals(value1,value2,0.0);
+        double feetValue1=quantityMeasurment.unitConversion(Units.FEET,0.0);
+        double feetValue2=quantityMeasurment.unitConversion(Units.FEET,0.0);
+        Assert.assertEquals(feetValue1,feetValue2,0.0);
     }
 
     @Test
