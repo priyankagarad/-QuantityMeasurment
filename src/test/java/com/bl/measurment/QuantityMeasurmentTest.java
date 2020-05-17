@@ -83,4 +83,11 @@ public class QuantityMeasurmentTest {
         double value2=quantityMeasurment.getInchValue(5.0);
         Assert.assertEquals(value1,value2,0.0);
     }
+
+    @Test
+    public void givenTwoDifferentInchValues_WhenNotEqual_ShouldReturnFalse() {
+        double result1 = quantityMeasurment.getFeetValue(10.5);
+        double result2 = quantityMeasurment.getFeetValue(12.0);
+        Assert.assertNotEquals(result1,result2, 0.0);
+    }
 }
