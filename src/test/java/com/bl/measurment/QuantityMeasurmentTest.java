@@ -107,4 +107,13 @@ public class QuantityMeasurmentTest {
         Assert.assertEquals(value1,value2,0.0);
     }
 
+    @Test
+    public void givenOneInchAndOneFeetValue_WhenNotEqual_ShouldReturnTrue()
+    {
+        double value2=quantityMeasurment.unitConversion(Units.INCH,1.0);
+        double value1=quantityMeasurment.unitConversion(Units.FEET,1.0);
+        Assert.assertEquals(value2,value1,0.0);
+    }
+
+
 }
