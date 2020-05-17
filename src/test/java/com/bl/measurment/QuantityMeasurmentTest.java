@@ -25,4 +25,11 @@ public class QuantityMeasurmentTest {
         boolean checkNullValue=quantityMeasurment.equals(null);
         Assert.assertEquals(false,checkNullValue);
     }
+
+    @Test
+    public void givenRefrenceObject_WhenEqual_ShouldReturnTrue()
+    {
+        QuantityMeasurment referenceCheck=new QuantityMeasurment();
+        Assert.assertEquals(quantityMeasurment,referenceCheck);
+    }
 }
