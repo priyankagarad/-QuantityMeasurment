@@ -162,4 +162,12 @@ public class QuantityMeasurmentTest {
         double yardValue=quantityMeasurment.unitConversion(Units.INCH,36.0);
         Assert.assertEquals(feetValue,yardValue,0.0);
     }
+
+    @Test
+    public void givenOneInchdAndThirtySixYardValue_WhenEqual_ShouldReturntrue()
+    {
+        double inchValue=quantityMeasurment.unitConversion(Units.INCH,1.0);
+        double yardValue=quantityMeasurment.unitConversion(Units.YARD,36.0);
+        Assert.assertEquals(inchValue,yardValue,0.0);
+    }
 }
