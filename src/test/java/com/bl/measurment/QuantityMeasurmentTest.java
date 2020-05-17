@@ -130,4 +130,12 @@ public class QuantityMeasurmentTest {
         double value2=quantityMeasurment.unitConversion(Units.INCH,1.0);
         Assert.assertEquals(value1,value2,0.0);
     }
+
+    @Test
+    public void givenThreeFeetAndOneYardValue_WhenEqual_ShouldReturnTrue()
+    {
+        double feetValue=quantityMeasurment.unitConversion(Units.FEET,3.0);
+        double yardValue=quantityMeasurment.unitConversion(Units.YARD,1.0);
+        Assert.assertEquals(yardValue,feetValue,0.0);
+    }
 }
