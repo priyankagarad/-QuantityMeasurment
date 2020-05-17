@@ -47,5 +47,10 @@ public class QuantityMeasurmentTest {
         Assert.assertNotEquals(result1,result2, 0.0);
     }
 
-
+    @Test
+    public void givenZeroInchAndZeroInchValue_WhenEqual_ThenShouldReturnTrue()
+    {
+        boolean checkNullValue1=quantityMeasurment.equals(null);
+        Assert.assertEquals(false,checkNullValue1);
+    }
 }
