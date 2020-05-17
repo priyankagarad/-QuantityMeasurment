@@ -32,4 +32,12 @@ public class QuantityMeasurmentTest {
         QuantityMeasurment referenceCheck=new QuantityMeasurment();
         Assert.assertEquals(quantityMeasurment,referenceCheck);
     }
+
+    @Test
+    public void givenSameTypeWhenCompare_ShouldReturnTrue() {
+        double type1=quantityMeasurment.getFeetValue(10.0);
+        double type2=quantityMeasurment.getFeetValue(10.0);
+        Assert.assertEquals(type1,type2,0.0);
+    }
+
 }
