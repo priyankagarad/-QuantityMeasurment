@@ -41,7 +41,7 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenTwoDifferentFeetValue_sWhenNotEqual_ShouldReturnFalse() {
+    public void givenTwoDifferentFeetValues_WhenNotEqual_ShouldReturnFalse() {
         double result1 = quantityMeasurment.getFeetValue(10.5);
         double result2 = quantityMeasurment.getFeetValue(12.0);
         Assert.assertNotEquals(result1,result2, 0.0);

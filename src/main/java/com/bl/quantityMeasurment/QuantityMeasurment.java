@@ -2,8 +2,14 @@ package com.bl.quantityMeasurment;
 public class QuantityMeasurment
 {
     private double feet;
+    private  double inch;
+
     public double getFeetValue(double feet){
         return feet;
+    }
+
+    public double getInchValue(double inch) {
+        return inch;
     }
 
     @Override
