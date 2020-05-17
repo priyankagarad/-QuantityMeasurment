@@ -34,10 +34,18 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenSameTypeWhenCompare_ShouldReturnTrue() {
+    public void givenSameTypeValue_WhenCompare_ShouldReturnTrue() {
         double type1=quantityMeasurment.getFeetValue(10.0);
         double type2=quantityMeasurment.getFeetValue(10.0);
         Assert.assertEquals(type1,type2,0.0);
     }
+
+    @Test
+    public void givenTwoDifferentFeetValue_sWhenNotEqual_ShouldReturnFalse() {
+        double result1 = quantityMeasurment.getFeetValue(10.5);
+        double result2 = quantityMeasurment.getFeetValue(12.0);
+        Assert.assertNotEquals(result1,result2, 0.0);
+    }
+
 
 }
