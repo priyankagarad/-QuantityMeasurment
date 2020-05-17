@@ -69,5 +69,18 @@ public class QuantityMeasurmentTest {
         Assert.assertEquals(quantityMeasurment,referanceValue);
     }
 
+    @Test
+    public void givenDiffrentTypeCheckObjectInch_WhenEqual_ThenShouldReturnFalse()
+    {
+        Object object=new Object();
+        Assert.assertFalse(quantityMeasurment.equals(object));
+    }
 
+    @Test
+    public void givenTwoEqualInchValue_WhenEqual_ThenShouldReturnTrue()
+    {
+        double value1=quantityMeasurment.getInchValue(5.0);
+        double value2=quantityMeasurment.getInchValue(5.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
 }
