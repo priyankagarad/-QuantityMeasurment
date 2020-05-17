@@ -91,4 +91,12 @@ public class QuantityMeasurmentTest {
         double result2 = quantityMeasurment.unitConversion(Units.FEET,12.0);
         Assert.assertNotEquals(result1,result2, 0.0);
     }
+    @Test
+    public void givenZeroFeetAndZeroInchValue_WhenEqual_ThenShouldReturnTrue()
+    {
+        double value1=quantityMeasurment.unitConversion(Units.FEET,0.0);
+        double value2=quantityMeasurment.unitConversion(Units.INCH,0.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
+
 }
