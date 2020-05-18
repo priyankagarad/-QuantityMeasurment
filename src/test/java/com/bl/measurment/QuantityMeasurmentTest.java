@@ -164,7 +164,7 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenOneInchdAndThirtySixYardValue_WhenEqual_ShouldReturnTrue()
+    public void givenOneInchAndThirtySixYardValue_WhenEqual_ShouldReturnTrue()
     {
         double inchValue=quantityMeasurment.unitConversion(Units.INCH,1.0);
         double yardValue=quantityMeasurment.unitConversion(Units.YARD,36.0);
