@@ -6,7 +6,9 @@ public enum  Units {
     CM_TO_INCH(1/2.5),
     LITRE(1.0),
     GALLON_TO_LITRE(1*3.78),
-    MILLILITER_TO_LITRE(1.0/1000);
+    MILLILITER_TO_LITRE(1.0/1000),
+    TONNE_TO_KG(1.0),
+    GRAMS_TO_KG(1.0/1000);
 
     final double unit;
     Units(double unit)

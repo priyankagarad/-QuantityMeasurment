@@ -168,7 +168,7 @@ public class QuantityMeasurmentTest {
     {
         double inchValue=quantityMeasurment.unitConversion(Units.INCH,1.0);
         double yardValue=quantityMeasurment.unitConversion(Units.YARD,36.0);
-        Assert.assertEquals(inchValue,yardValue,0.0);
+        Assert.assertNotEquals(inchValue,yardValue,0.0);
     }
 
     @Test
@@ -234,5 +234,13 @@ public class QuantityMeasurmentTest {
         double litreValue=quantityMeasurment.unitConversion(Units.LITRE,1.0);
         double milliLitreValue=quantityMeasurment.unitConversion(Units.MILLILITER_TO_LITRE,1000);
         Assert.assertEquals(2,litreValue+milliLitreValue,0.0);
+    }
+
+    @Test
+    public void givenOneTonneAndOneThousandGrams_WhenAdded_ShouldReturnOneThousandOneKg()
+    {
+        double TonneValue=quantityMeasurment.unitConversion(Units.TONNE_TO_KG,1.0);
+        double gramValue=quantityMeasurment.unitConversion(Units.GRAMS_TO_KG,1000.0);
+        Assert.assertEquals(1001.0,TonneValue+gramValue,0.0);
     }
 }
