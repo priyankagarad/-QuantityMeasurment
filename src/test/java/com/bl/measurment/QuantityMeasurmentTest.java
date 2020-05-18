@@ -219,4 +219,12 @@ public class QuantityMeasurmentTest {
         double feetValue2=quantityMeasurment.unitConversion(Units.CM_TO_INCH,2.5);
         Assert.assertEquals(3,inchValue1+feetValue2,0.0);
     }
+
+    @Test
+    public void givenOneGallonAndThreePointSevenEightLit_WhenEqual_ThenShouldReturnTrue()
+    {
+        double gallonValue=quantityMeasurment.unitConversion(Units.GALLON_TO_LITRE,1.0);
+        double litreValue=quantityMeasurment.unitConversion(Units.LITRE,3.78);
+        Assert.assertEquals(gallonValue,litreValue,0.0);
+    }
 }
