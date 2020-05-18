@@ -233,6 +233,6 @@ public class QuantityMeasurmentTest {
     {
         double litreValue=quantityMeasurment.unitConversion(Units.LITRE,1.0);
         double milliLitreValue=quantityMeasurment.unitConversion(Units.MILLILITER_TO_LITRE,1000);
-        Assert.assertEquals(litreValue,milliLitreValue,0.0);
+        Assert.assertEquals(2,litreValue+milliLitreValue,0.0);
     }
 }
