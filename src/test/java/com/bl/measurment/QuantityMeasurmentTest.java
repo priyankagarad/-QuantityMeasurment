@@ -100,19 +100,19 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenOneFeetAndOneInchValue_WhenNotEqual_ShouldReturnTrue()
+    public void givenOneFeetAndOneInchValue_WhenNotEqual_ShouldReturnFalse()
     {
         double value1=quantityMeasurment.unitConversion(Units.FEET,1.0);
         double value2=quantityMeasurment.unitConversion(Units.INCH,1.0);
-        Assert.assertEquals(value1,value2,0.0);
+        Assert.assertNotEquals(value1,value2,0.0);
     }
 
     @Test
-    public void givenOneInchAndOneFeetValue_WhenNotEqual_ShouldReturnTrue()
+    public void givenOneInchAndOneFeetValue_WhenNotEqual_ShouldReturnFalse()
     {
         double value2=quantityMeasurment.unitConversion(Units.INCH,1.0);
         double value1=quantityMeasurment.unitConversion(Units.FEET,1.0);
-        Assert.assertEquals(value2,value1,0.0);
+        Assert.assertNotEquals(value2,value1,0.0);
     }
 
     @Test
@@ -124,11 +124,11 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenTwelveFeetAndOneFeetValue_WhenNotEqual_ShouldReturnTrue()
+    public void givenTwelveFeetAndOneFeetValue_WhenNotEqual_ShouldReturnFalse()
     {
         double value1=quantityMeasurment.unitConversion(Units.FEET,12.0);
         double value2=quantityMeasurment.unitConversion(Units.INCH,1.0);
-        Assert.assertEquals(value1,value2,0.0);
+        Assert.assertNotEquals(value1,value2,0.0);
     }
 
     @Test
@@ -180,10 +180,10 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenTwoInchAndFiveCmValue_WhenAdd_ShouldReturnCorrectResult()
+    public void givenTwoInchAndFiveCmValue_WhenEqual_ShouldReturnCorrectResult()
     {
-        double inchValue=quantityMeasurment.unitConversion(Units.INCH,1.0);
-        double cmValue=quantityMeasurment.unitConversion(Units.CM_TO_INCH,3.0);
+        double inchValue=quantityMeasurment.unitConversion(Units.INCH,2.0);
+        double cmValue=quantityMeasurment.unitConversion(Units.CM_TO_INCH,5);
         Assert.assertEquals(inchValue,cmValue,0.0);
     }
 
@@ -197,10 +197,10 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenOneFeetAndOneInchValue_WhenAdd_ShouldReturnForty()
+    public void givenOneFeetAndTwoInchValue_WhenAdd_ShouldReturnForty()
     {
         double feetValue1=quantityMeasurment.unitConversion(Units.FEET,1.0);
-        double inchValue2=quantityMeasurment.unitConversion(Units.INCH,1.0);
+        double inchValue2=quantityMeasurment.unitConversion(Units.INCH,2.0);
         Assert.assertEquals(14,feetValue1+inchValue2,0.0);
     }
 
@@ -210,5 +210,13 @@ public class QuantityMeasurmentTest {
         double feetValue1=quantityMeasurment.unitConversion(Units.FEET,1.0);
         double feetValue2=quantityMeasurment.unitConversion(Units.FEET,1.0);
         Assert.assertEquals(24,feetValue1+feetValue2,0.0);
+    }
+
+    @Test
+    public void givenTwoInchAndTwoPointFiveCm_WhenAdded_ThenShouldReturnThreeInch()
+    {
+        double inchValue1=quantityMeasurment.unitConversion(Units.INCH,2.0);
+        double feetValue2=quantityMeasurment.unitConversion(Units.CM_TO_INCH,2.5);
+        Assert.assertEquals(3,inchValue1+feetValue2,0.0);
     }
 }
