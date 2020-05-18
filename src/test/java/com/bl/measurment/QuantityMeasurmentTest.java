@@ -205,7 +205,7 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenOneFeetAndOneFeet_WhenAdded_ThenShouldReturnTwentyFourInch()
+    public void givenOneFeetAndOneFeet_WhenAdded_ShouldReturnTwentyFourInch()
     {
         double feetValue1=quantityMeasurment.unitConversion(Units.FEET,1.0);
         double feetValue2=quantityMeasurment.unitConversion(Units.FEET,1.0);
@@ -213,7 +213,7 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenTwoInchAndTwoPointFiveCm_WhenAdded_ThenShouldReturnThreeInch()
+    public void givenTwoInchAndTwoPointFiveCm_WhenAdded_ShouldReturnThreeInch()
     {
         double inchValue1=quantityMeasurment.unitConversion(Units.INCH,2.0);
         double feetValue2=quantityMeasurment.unitConversion(Units.CM_TO_INCH,2.5);
@@ -221,10 +221,18 @@ public class QuantityMeasurmentTest {
     }
 
     @Test
-    public void givenOneGallonAndThreePointSevenEightLit_WhenEqual_ThenShouldReturnTrue()
+    public void givenOneGallonAndThreePointSevenEightLit_WhenEqual_ShouldReturnTrue()
     {
         double gallonValue=quantityMeasurment.unitConversion(Units.GALLON_TO_LITRE,1.0);
         double litreValue=quantityMeasurment.unitConversion(Units.LITRE,3.78);
-        Assert.assertEquals(gallonValue,litreValue,0.0);
+        Assert.assertEquals(7.56,gallonValue+litreValue,0.0);
+    }
+
+    @Test
+    public void givenOneLitreAndOneThousandMilliLitre_WhenEqual_ShouldReturnTwoLitres()
+    {
+        double litreValue=quantityMeasurment.unitConversion(Units.LITRE,1.0);
+        double milliLitreValue=quantityMeasurment.unitConversion(Units.MILLILITER_TO_LITRE,1000);
+        Assert.assertEquals(litreValue,milliLitreValue,0.0);
     }
 }
